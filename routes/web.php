@@ -19,8 +19,10 @@ Route::get('/', function () {
 
 Route::get('admin/dashboard',function (){
    return view('admin.dashboard');
-});
+})->name('admin.dashboard');
 
 Route::get('admin/blogs',function (){
     return view('admin.blog');
 });
+Route::resource('admin/category','Admin\CategoryController');
+
