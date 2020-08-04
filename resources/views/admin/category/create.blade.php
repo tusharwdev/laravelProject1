@@ -30,31 +30,9 @@
                             <h3 class="card-title">Category Create Form</h3>
                         </div>
                         <form action="{{ route('category.store') }}" method="POST">
-                        <div class="card-body">
 
-                            @csrf
-                            @method('post')
-                            <label for="name">Name</label>
-                            @error('name') <i class="text-danger">{{ $message }}</i> @enderror
-                            <input name="name" class="form-control form-control-lg" value="{{ old('name') }} " type="text" placeholder="Enter Category Name">
-                            <br>
-                            <label for="description">Description</label>
-                            <textarea name="description" class="form-control" placeholder="Enter Category Description">{{ old('description') }}</textarea>
-                            <br>
-                            <div class="form-check">
-                                @error('status') <i class="text-danger">{{ $message }}</i> @enderror
-                                <p>Status</p>
+                            @include('admin.category._form')
 
-                                <input name="status" value="Active" type="radio" class="form-check-input" id="active" @if(old('status') & old('status') == 'Active') checked @endif>
-                                <label class="form-check-label" for="active">Active </label><br>
-                                <input name="status" value="Inactive" @if(old('status') & old('status') == 'Inactive') checked @endif type="radio" class="form-check-input" id="inactive">
-                                <label class="form-check-label" for="Inactive">Inactive</label>
-                                <br>
-                                <br>
-
-                            </div
-
-                        </div>
                             <button type="submit">Submit</button>
                         </form>
                         <!-- /.card-body -->
