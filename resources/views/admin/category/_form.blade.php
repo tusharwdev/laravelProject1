@@ -1,5 +1,6 @@
 <div class="card-body">
-    @method('put')
+
+
     @csrf
     <label for="name">Name</label>
     @error('name') <i class="text-danger">{{ $message }}</i> @enderror

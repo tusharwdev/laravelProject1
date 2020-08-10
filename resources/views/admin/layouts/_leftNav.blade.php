@@ -69,8 +69,8 @@
             <div class="dropdown">
                 <a href="{{ route('category.index') }}" class="dropbtn">Category</a>
                 <div class="dropdown-content">
-                    <a href="{{ route('category.index') }}">Category List</a>
-                    <a href="{{ route('category.create') }}">Create Category</a>
+                    <a href="{{ route('category.index') }}" class="nav-link @if(request()->routeIs('category.index')) active @endif">Category List</a>
+                    <a href="{{ route('category.create') }} " class="nav-link @if(request()->routeIs('category.create')) active @endif">Create Category</a>
 
                 </div>
             </div>

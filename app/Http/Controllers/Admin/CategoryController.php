@@ -47,6 +47,7 @@ class CategoryController extends Controller
       $category->name = $request->name;
       $category->description = $request->description;
       $category->status = $request->status;
+      session()->flash('message',"Category Created Successfully");
       $category->save();
        return redirect()->route('category.index');
 
@@ -94,6 +95,7 @@ class CategoryController extends Controller
             $category->name = $request->name;
             $category->description = $request->description;
             $category->status = $request->status;
+        session()->flash('message',"Category Updated Successfully");
             $category->update();
             return redirect()->route('category.index');
     }
